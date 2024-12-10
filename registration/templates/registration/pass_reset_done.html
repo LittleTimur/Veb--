@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .pass-reset-done {
+        text-align: center; /* Выравнивание текста по центру */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Выравнивание элементов по центру по горизонтали */
+        justify-content: center; /* Выравнивание элементов по центру по вертикали */
+        height: 80vh; /* Использование всей высоты видимой области */
+    }
+    /* Применение стилей для ссылки, чтобы она выглядела как кнопка */
+    .pass-reset-done a {
+        text-decoration: none; /* Убираем подчёркивание текста */
+        color: white; /* Белый цвет текста */
+        background-color: #007bff; /* Синий цвет фона */
+        padding: 10px 15px; /* Отступы */
+        border-radius: 5px; /* Скругление углов */
+        display: inline-block; /* Делаем ссылку блочно-строчным элементом */
+        transition: background-color 0.2s; /* Плавное изменение цвета при наведении */
+    }
+    .pass-reset-done a:hover {
+        background-color: #0056b3; /* Темно-синий цвет при наведении */
+        transform: translateY(-3px); /* Подъем кнопки */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень при наведении */
+    }
+</style>
+
+<div class="pass-reset-done">
+    <h2>Инструкции отправлены</h2>
+    <p>Проверьте свой email для дальнейших инструкций по сбросу пароля.</p>
+    <!-- Обновление ссылки для использования новых стилей -->
+    <a href="{% url 'login' %}" class="btn">Вернуться на страницу входа</a>
+</div>
+{% endblock %}

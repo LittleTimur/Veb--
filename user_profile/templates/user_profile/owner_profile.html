@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block optional_link %}
+{% endblock %}
+{% load static %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль пользователя</title>
+    {% block style %}
+    <link rel="stylesheet" href="{% static 'user_profile/css/user_proffile.css' %}" >
+    {% endblock style %}
+</head>
+<body>
+    <div1>
+    <div class="profile">
+        <h2>Профиль пользователя</h2>
+        <img src="{{ about_user.img.url }}" alt="{{ announ.name }}" class="owner_profile-image">
+        <p><strong>Имя:</strong> {{ about_user.name }}</p>
+        <p><strong>Фамилия:</strong> {{ about_user.surname }}</p>
+        <p><strong>Email:</strong> {{ about_user.user.email }}</p>
+        <p><strong>Немного обо мне:</strong> {{ about_user.bio }}</p>
+        <!-- Добавьте дополнительные поля здесь, если необходимо -->
+    </div>
+</div1>
+    <div2>
+        <div class="user-ads">
+            <h3>Объявления пользователя</h3>
+            {% for announ in announs %}
+            <div class="announ-container">
+                <img src="{{ announ.img.url }}" alt="Фото объявления" class="announ-image">
+                <div class="announ-details">
+                    <!-- Добавляем подпись к названию -->
+                    <h2><a href="{% url 'announshow' announ.id_announ %}">{{ announ.name }}</a></h2>
+                    <p>Стоимость: <span class="announ-value">{{ announ.value }}</span> руб.</p>
+                    <p>Категория: <span class="announ-cat">{{ announ.announ_cat }}</span></p>
+                    <!-- Добавляем подпись к изображению -->
+                    <p class="announ-description">{{ announ.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div2></body>
+</html>
+{% endblock content %}

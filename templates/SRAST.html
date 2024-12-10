@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+SRAST
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/SRAST.css' %}" >
+{% endblock style %}
+
+{% block content %}
+<main>
+    
+      <div class="categories" style="display: flex;">
+        <ul class="cat-ul">
+          {% for category in categories %}
+          <li class="cat-li"><a class="cat-a" href="{% url 'category' category.id %}">{{ category.name }}</a></li>
+          {% endfor %}
+        </ul>
+        
+      </div>
+  
+<h2><a href="{% url 'announlist' %}" class = "notion">Объявления</a></h2>
+
+
+<div class="announcement-list">
+  {% for announcement in announcements %}
+  <a href="{% url 'announshow' announcement.id_announ %}" class="announcement-link">
+    <div class="announcement">
+      <img src="{{ announcement.img.url }}" alt="Announcement Image">
+      <h2>{{ announcement.name }}</h2>
+      <p>Цена: {{ announcement.value }} руб.</p>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% endblock content %}
+</main>
+

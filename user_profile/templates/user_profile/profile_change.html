@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block optional_link %}
+{% endblock %}
+{% load static %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование профиля</title>
+    {% block style %}
+    <link rel="stylesheet" href="{% static 'user_profile/css/profile_change.css' %}" >
+    {% endblock style %}
+</head>
+<body>
+    <div class="profile">
+        <h2>Редактирование профиля</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_name">Имя:</label>
+                <input type="text" name="name" id="id_name" value="{{ about_user.name }}" maxlength="30">
+            </div>
+            <div class="form-group">
+                <label for="id_surname">Фамилия:</label>
+                <input type="text" name="surname" id="id_surname" value="{{ about_user.surname }}" maxlength="30">
+            </div>
+            <div class="form-group">
+                <label for="id_bio">Немного обо мне:</label>
+                <textarea name="bio" id="id_bio">{{ about_user.bio }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="id_location">Адрес:</label>
+                <input type="text" name="location" id="id_location" value="{{ about_user.location }}" maxlength="30">
+            </div>
+            <div class="form-group">
+                <label for="id_birth_date">Дата рождения:</label>
+                <input type="date" name="birth_date" id="id_birth_date" value="{{ about_user.birth_date|date:'Y-m-d' }}">
+            </div>
+            <div class="form-group">
+                <label for="id_img">Фотография:</label>
+                <input type="file" name="img" id="id_img">
+            </div>
+            <button type="submit">Сохранить изменения</button>
+        </form>
+    </div>
+</body>
+</html>
+{% endblock content %}

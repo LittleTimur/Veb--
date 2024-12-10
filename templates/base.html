@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>{% block title %}{% endblock title %}</title>
+    
+    {% block style %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    {% endblock style %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" as="style">
+
+    
+  </head>
+  <body class="preload">
+    <div id="header">
+      <a href="/" id="homeLink">SRAST</a>
+      {% block optional_link %}
+      <a href="{% url 'announcreate'%}" id="profileButton">Создать объявление</a>
+      <a href="{% url 'user_profile' %}" id="profileButton">Профиль</a>
+      <a href="{% url 'inbox' %}" id="messageButton">Сообщения</a></li>
+      {% endblock %}
+    </div>
+    <script>
+      window.addEventListener('load', function() {
+      document.body.classList.remove('preload');
+    });
+    </script>
+    
+  </body>
+  
+  {% block content %}{% endblock content %}
+  
+</html>

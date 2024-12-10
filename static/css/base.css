@@ -1,0 +1,58 @@
+.preload{
+    visibility: hidden;
+}
+html, body {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e2939;
+    margin: 0;
+    padding: 10px;
+}
+
+#header a {
+    font-size: 20px;
+    text-align: center;
+    float: left;
+}
+
+#homeLink, #profileButton, #createannoun-link #homeLink, #messageButton{
+    padding: 10px 20px;
+    display: flex;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease 
+}
+
+#homeLink {
+    margin-right: auto;
+}
+#createannoun-link {
+    display: flex;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+#profileButton {   
+    float: right;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+#messageButton {
+    float: right;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+#homeLink:hover, #profileButton:hover, #createannoun-link:hover, #messageButton:hover {
+    color: #4E5A6B;
+}
+
+

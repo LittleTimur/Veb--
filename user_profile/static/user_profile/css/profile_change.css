@@ -1,0 +1,78 @@
+/* Добавляем стили для формы и её элементов */
+form {
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 1em;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: .5em;
+    color: #333;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  input[type="file"],
+  textarea {
+    width: 100%;
+    padding: .5em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  input[type="submit"] {
+    background-color: #008cba;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #005f73;
+  }
+  
+  /* Стили для предварительного просмотра изображения */
+  .profile-image-preview {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-top: 1em;
+    border-radius: 8px;
+  }
+  button {
+    background-color: #008cba;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #005f73;
+  }
+  h2 {
+    font-size: 1.5em;
+    margin: 0 0 10px 10px;
+    color: #333;
+  }

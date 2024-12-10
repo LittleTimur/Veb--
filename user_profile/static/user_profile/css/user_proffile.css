@@ -1,0 +1,152 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.profile, .user-ads {
+  background-color: #fff;
+  padding: 2em;
+  width: 80%;
+  margin: auto; /* Центрирование блоков */
+  margin-top: 90px; /* Увеличение расстояния от верха страницы */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для блоков */
+  margin-bottom: 2em; /* Отступ между блоками */
+}
+
+.profile {
+  display: block;
+   /* Максимальная ширина изображения равна 100% ширины родительского элемента */
+   /* Высота изменяется автоматически для сохранения пропорций */
+  object-fit: contain; /* Изображение будет масштабироваться, чтобы быть полностью видимым */
+}
+
+h2, h3 {
+  color: #333;
+  margin-bottom: 0.5em;
+}
+h2 {
+  font-size: 1.5em;
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+h2 a {
+  text-decoration: none;
+  color: #333;
+}
+
+h2 a:hover {
+  text-decoration: underline;
+}
+
+p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.ad {
+  border-bottom: 1px solid #eee; /* Разделитель для объявлений */
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
+.profile-header{
+  display: flex;
+  align-items: center;
+}
+.pencil-btn {
+  padding: 0 10px 5px;
+  background-color: white;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #c8c8c8;
+}
+.announ-container {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.announ-container:hover {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transform: translateY(-3px);
+}
+.owner_profile-image{
+  width: 250px; /* Максимальная ширина изображения */
+  max-height: 250px; /* Максимальная высота изображения */
+  width: auto; /* Ширина изменится пропорционально */
+  height: auto; /* Высота изменится пропорционально */
+  border-radius: 7%; /* Делаем изображение круглым */
+  object-fit: cover; /* Обрезка изображения для сохранения пропорций */
+}
+.announ-image {
+  width: 150px;
+  height: auto;
+  border-radius: 4px;
+  margin-right: 20px;
+}
+
+.announ-details {
+  flex-grow: 1;
+}
+.announ-value {
+  font-weight: bold;
+  color: #007BFF;
+}
+
+.announ-cat {
+  display: inline-block;
+  background-color: #007BFF;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8em;
+}
+.exit{
+  padding: 0 10px 5px;
+  background-color: white;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+a.btn {
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.2s;
+}
+div1 {
+  float: left;
+}
+div2 {
+  float: right;
+  margin-right: 180px;
+}
+
+main-div:after {
+  content:'';
+  display:table;
+  clear:both;
+}

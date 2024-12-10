@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="pass-reset-complete">
+    <h2 style="font-size: 24px; color: #333; margin-bottom: 20px;">Сброс пароля выполнен</h2>
+    <p style="font-size: 16px; color: #666; margin-bottom: 20px;">Ваш пароль был успешно сброшен. Теперь вы можете войти на сайт с новым паролем.</p>
+    <a href="{% url 'login' %}" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px;">Войти</a>
+  </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block main %}
+    <ul class="sidebar-nav">
+        {% if user.is_authenticated %}
+            <li>Пользователь: {{ user.get_username }}</li>
+            <li>Имя: {{ user.first_name }}</li>
+            <li>Фамилия: {{ user.last_name }}</li>
+            <li>Email: {{ user.email }}</li>
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+            </form>
+        {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+        {% endif %}
+    </ul>
+{% endblock %}
+</body>
+</html>

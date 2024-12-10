@@ -1,0 +1,125 @@
+main {
+
+  padding: 20px;
+}
+
+#announlist {
+  padding: 10px 20px;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Roboto';
+  font-size: 24px;
+
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  /* Прикрепляем к верхней части страницы */
+  left: 50%;
+  /* Смещаем на 50% ширины экрана влево */
+  transform: translateX(-50%);
+  z-index: 14;
+}
+
+#announlist:hover {
+  color: #ddd;
+}
+
+h2 {
+  color: #1E2838;
+  font-family: 'Roboto';
+  font-size: 24px;
+  margin-bottom: auto;
+}
+
+.announcement-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+.announcement-link {
+  text-decoration: none;
+  color: inherit;
+  /* Цвет текста будет наследоваться от родительского элемента */
+}
+
+.announcement {
+  background-color: white;
+  margin: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  width: 250px;
+  transition: transform 0.3s ease;
+  /* Анимация при наведении */
+}
+
+.announcement:hover {
+  transform: translateY(-5px);
+  /* Поднимает объявление при наведении */
+}
+
+
+.announcement img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.announcement h2 {
+  margin: 0 0 10px 0;
+  /* Отступы вокруг заголовка */
+  color: #1E2838;
+  /* Цвет текста заголовка */
+  font-size: 24px;
+  /* Размер шрифта заголовка */
+}
+
+.announcement p {
+  margin: 0;
+  /* Убираем отступы вокруг параграфа */
+  color: #666;
+  /* Цвет текста параграфа */
+  font-size: 18px;
+  /* Размер шрифта параграфа */
+}
+
+.cat-ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.cat-li {
+  margin: 0 10px;
+}
+
+.cat-a {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 50px;
+  /* Задаем радиус для создания овальной формы */
+  background-color: #007bff;
+  /* Цвет фона кнопки */
+  color: #fff;
+  /* Цвет текста */
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.cat-a:hover{
+  background-color: #026ee2;
+}
+.notion{
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+.notion:visited{
+  color: #1E2838;
+}
+.notion:hover{
+  color: #2e66ba;
+}
