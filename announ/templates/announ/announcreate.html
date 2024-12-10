@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Создание объявления
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'announ/css/announcreate.css' %}" >
+{% endblock style %}
+
+
+{% block content %}
+<div class="form-container">
+    <form method="POST" enctype="multipart/form-data">
+     {% csrf_token %}
+     <div class="form-field">
+         <label for="id_name">Название объявления</label>
+         {{ form.name }}
+     </div>
+     <div class="form-field">
+         <label for="id_about">Описание</label>
+         {{ form.about }}
+     </div>
+     <div class="form-field">
+         <label for="id_img">Изображение</label>
+         {{ form.img }}
+     </div>
+     <div class="form-field">
+         <label for="id_value">Цена за услугу</label>
+         {{ form.value }}
+     </div>
+     <div class="form-field">
+         <label for="id_cat">Категория</label>
+         {{ form.cat }}
+     </div>
+     <input type="submit" value="Отправить">
+    </form>
+</div>
+{% endblock content %}

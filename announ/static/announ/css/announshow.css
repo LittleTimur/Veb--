@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+.content-container {
+    display: flex;
+    justify-content: space-between;
+}
+.main-announcement {
+    flex: 3;
+    margin-right: 20px; /* Отступ между основным объявлением и похожими */
+}
+.announcement-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: auto;
+    
+}
+.related-announcements {
+    flex: 2;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    
+    flex-direction: column;
+    gap: 10px; /* Отступ между похожими объявлениями */
+}
+.related-announcement-container {
+    background-color: #fff;
+    padding: 10px;
+    margin-right: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+.related-announcement-image {
+    width: 100%;
+    max-width: 150px; /* Максимальная ширина изображения в похожих объявлениях */
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+/* ... остальные стили ... */
+.announcement-field {
+    margin-bottom: 20px;
+}
+.announcement-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.announcement-image {
+    width: 150px; /* Максимальная ширина изображения */
+    max-height: 250px; /* Максимальная высота изображения */
+    width: auto; /* Ширина изменится пропорционально */
+    height: auto; /* Высота изменится пропорционально */
+    border-radius: 7%; /* Делаем изображение круглым */
+    object-fit: cover; /* Обрезка изображения для сохранения пропорций */
+    
+    margin-bottom: 10px;
+}
+.announcement-description {
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+}
+.announcement-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #5cb85c;
+    margin-bottom: 10px;
+}
+.announcement-price a {
+    color: #007BFF; /* Синий цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    font-weight: bold; /* Делаем текст жирным */
+  }
+  
+  .announcement-price a:hover {
+    color: #5f9ea0; /* Цвет текста становится светло-синим */
+    text-decoration: none; /* Текст остается без подчеркивания */
+  }
+.announcement-category {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.announcement-link {
+    color: black; /* Изменение цвета ссылки на черный */
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+div1 {
+    margin-left: 100px;
+    float: left;
+  }
+  div2 {
+    margin-right: 150px;
+    float: right;
+  }
+  div3 {
+    margin-left: 200px;
+    float: right;
+  }
+  
+  main-div:after {
+    content:'';
+    display:table;
+    clear:both;
+  }

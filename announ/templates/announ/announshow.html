@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+{{ announ.name }}
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'announ/css/announshow.css' %}" >
+{% endblock style %}
+
+
+{% block content %}
+<div1>
+<div class="announcement-container">
+    <div class="announcement-field announcement-title">{{ announ.name }}</div>
+    <img src="{{ announ.img.url }}" alt="{{ announ.name }}" class="announcement-image">
+    <div class="announcement-field announcement-description">{{ announ.about }}</div>
+    <div class="announcement-field announcement-price">{{ announ.value }} руб.</div>
+    <div class="announcement-field announcement-price"><a href = '{% url "owner_profile" announ.id_announ %}'>{{ user_about.surname }} {{ user_about.name }}</a></div>
+    {% if request.user.profile.id != user_about.id %}
+         <a href="{% url 'create-message' user_about.id %}" class="btn btn--sub btn--lg">Написать сообщение </a>
+    {% endif %}
+    <div class="announcement-field announcement-category">{{ announ.announ_cat }}</div>
+</div>
+</div1>
+<div2> <div class="related-announcements">
+    <h2></h2><br>
+    {% for related_announ in related_announs1 %}
+        <a href="{% url 'announshow' related_announ.id_announ %}" class="announcement-link">
+            <div class="related-announcement-container">
+                <div class="announcement-field announcement-title">{{ related_announ.name }}</div>
+                <img src="{{ related_announ.img.url }}" alt="{{ related_announ.name }}" class="related-announcement-image">
+                <div class="announcement-field announcement-price">{{ related_announ.value }} руб.</div>
+            </div>
+        </a>
+    {% endfor %}
+</div>
+</div></div2>
+
+<div3> <div class="related-announcements">
+    <h2>Похожие объявления:</h2>
+    {% for related_announ in related_announs2 %}
+        <a href="{% url 'announshow' related_announ.id_announ %}" class="announcement-link">
+            <div class="related-announcement-container">
+                <div class="announcement-field announcement-title">{{ related_announ.name }}</div>
+                <img src="{{ related_announ.img.url }}" alt="{{ related_announ.name }}" class="related-announcement-image">
+                <div class="announcement-field announcement-price">{{ related_announ.value }} руб.</div>
+            </div>
+        </a>
+    {% endfor %}
+</div>
+</div></div3>
+{% endblock content %}
+

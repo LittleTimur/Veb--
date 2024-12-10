@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Список объявлений
+{% endblock title %}
+
+{% block style %}
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'announ/css/allannoun.css' %}" >
+{% endblock style %}
+
+
+{% block content %}
+{% for announ in announs %}
+        <div class="announ-container">
+            <img src="{{ announ.img.url }}" alt="Фото объявления" class="announ-image">
+            <div class="announ-details">
+                <!-- Добавляем подпись к названию -->
+                <h2><a href="{% url 'announshow' announ.id_announ %}">{{ announ.name }}</a></h2>
+                <p>Стоимость: <span class="announ-value">{{ announ.value }}</span> руб.</p> <!-- Добавляем единицу измерения к цене -->
+                <p>Категория: <span class="announ-cat">{{ announ.announ_cat }}</span></p>
+                <!-- Добавляем подпись к изображению -->
+                <p class="announ-description">{{ announ.description }}</p>
+            </div>
+        </div>
+    {% endfor %}
+    <div style="justify-content: center; display: flex; align-items: center; margin-top: 30px;">
+        <a href="{% url 'announcreate'%}" class="createbtn">+</a>
+    </div>
+{% endblock content %}

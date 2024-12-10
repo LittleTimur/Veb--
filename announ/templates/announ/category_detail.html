@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Профиль
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'announ/css/allannoun.css' %}" >
+{% endblock style %}
+
+
+{% block content %}
+<div style="padding:0 20px;">
+    <h1>{{ category.name }}</h1>
+    {% if announ_count == 1 %}
+    <h2>Всего одно объявление</h2>
+    {% elif announ_count > 1 and announ_count < 5 %}
+        <h2>Всего {{announ_count}} объявления</h2>
+    {% else %}
+        <h2>Всего {{announ_count}} объявлений</h2>
+    {% endif %}
+</div>
+<h1>
+{% for announ in announs %}
+<div class="announ-container">
+    <img src="{{ announ.img.url }}" alt="Фото объявления" class="announ-image">
+    <div class="announ-details">
+        <!-- Добавляем подпись к названию -->
+        <h2><a href="{% url 'announshow' announ.id_announ %}">{{ announ.name }}</a></h2>
+        <p>Стоимость: <span class="announ-value">{{ announ.value }}</span> руб.</p> <!-- Добавляем единицу измерения к цене -->
+        <p>Категория: <span class="announ-cat">{{ announ.announ_cat }}</span></p>
+        <!-- Добавляем подпись к изображению -->
+        <p class="announ-description">{{ announ.description }}</p>
+    </div>
+</div>
+{% endfor %}
+<div style="text-align: center; margin-top: 30px auto;">
+    <a href="{% url 'announcreate'%}" class="createbtn">+</a>
+</div>
+{% endblock content %}
